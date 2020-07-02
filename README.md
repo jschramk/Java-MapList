@@ -9,6 +9,9 @@ The MapList data structure is purpose-built for applications where entries need 
 
 The MapList pairs very well with RecyclerViews for the Android developers among us.
 
+## Can I trust this code with my life?
+My implementation of the HashMapList is not perfect and has not yet been formally tested, but anything within the intended syntax as shown below should work properly. If you use this code and notice any errors, feel free to let me know or make your own implementation. I would love to see more efficient methods!
+
 ## How do I learn this power?
 Let's look at the leaderboard example I mentioned earlier (full source code is posted):
 
