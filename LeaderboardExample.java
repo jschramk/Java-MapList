@@ -1,6 +1,7 @@
 // Author: Jacob Schramkowski
 
 import java.util.Collections;
+import java.util.Comparator;
 import java.util.List;
 
 public class LeaderboardExample {
@@ -62,10 +63,15 @@ public class LeaderboardExample {
     int score = moveReport.value();
 
     // print final scores for each person in descending order
-    List<String> order = leaderBoard.keyList();
-    Collections.reverse(order);
+    Comparator<Integer> reverse = new Comparator<Integer>() {
+      @Override public int compare(Integer integer, Integer t1) {
+        return Integer.compare(t1, integer);
+      }
+    };
 
-    for(String person : order){
+    leaderBoard.setComparator(reverse);
+
+    for(String person : leaderBoard.keyList()){
       System.out.println(person + ": " + leaderBoard.get(person));
     }
 

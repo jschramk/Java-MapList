@@ -1,5 +1,6 @@
 // Author: Jacob Schramkowski
 
+import java.util.Comparator;
 import java.util.List;
 import java.util.Map;
 
@@ -57,5 +58,11 @@ public interface MapList<K, V extends Comparable<V>> extends Map<K, V> {
   * @return a sorted List containing the keys in the MapList
   */
  List<K> keyList();
+
+ /**
+  * Sets a new comparator for ordering entries differently
+  * @param valueComparator the comparator with which to sort the entries
+  */
+ void setComparator(Comparator<V> valueComparator);
 
 }
