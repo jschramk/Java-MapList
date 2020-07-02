@@ -7,6 +7,8 @@ An augmented version of the Java Map data structure with the following features:
 ## Why does this exist?
 The MapList data structure is purpose-built for applications where entries need to be accessed by keys AND indices, while remaining sorted by value. A representative example would be a leaderboard where the keys are names of players and the values are scores. At any given time, one might want to know who is in first place, but also what a specific player's score is in O(1) time. In addition to that, one may also want to know how a change in score would affect a player's place in the leaderboard. For this, the MapList inteface contains methods to track order changes with simple syntax and minimal impact on performance.
 
+The MapList pairs very well with RecyclerViews for the Android developers among us.
+
 ## How do I learn this power?
 Let's look at the leaderboard example I mentioned earlier (full source code is posted):
 
