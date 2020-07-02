@@ -1,5 +1,13 @@
+// Author: Jacob Schramkowski
+
 import java.util.*;
 
+/**
+ * A simple implementation of the MapList interface. The list is only sorted when it needs to be
+ * accessed to increase performance.
+ * @param <K> the key class type
+ * @param <V> the value class type
+ */
 public class HashMapList<K, V extends Comparable<V>> implements MapList<K, V> {
   
   private List<K> keys = new ArrayList<>();

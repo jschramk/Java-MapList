@@ -1,7 +1,13 @@
+// Author: Jacob Schramkowski
 
-
+/**
+ * A class containing information about a MapList entry modification
+ * @param <K> the key class type
+ * @param <V> the value class type
+ */
 public class MoveReport<K, V extends Comparable<V>> {
 
+  // enum for type of modification outcome
   public enum Type {
     INSERT,
     MOVE,
@@ -45,18 +51,34 @@ public class MoveReport<K, V extends Comparable<V>> {
 
   }
 
+  /**
+   * Gets the index of the entry before the operation
+   * @return the previous index of the modified entry
+   */
   public int from() {
     return prevIndex;
   }
 
+  /**
+   * Gets the index of the entry after the operation
+   * @return the new index of the modified entry
+   */
   public int to() {
     return newIndex;
   }
 
+  /**
+   * Gets the key of the modified entry
+   * @return the key of the entry
+   */
   public K key(){
     return key;
   }
 
+  /**
+   * Gets the value of the modified entry
+   * @return the value of the entry
+   */
   public V value() {
     return value;
   }
@@ -90,4 +112,5 @@ public class MoveReport<K, V extends Comparable<V>> {
     throw new IllegalStateException("Move type not properly set");
 
   }
+
 }
