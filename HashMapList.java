@@ -43,7 +43,7 @@ public class HashMapList<K, V extends Comparable<V>> implements MapList<K, V> {
     }
   }
 
-  @Override public V removeItemAt(int index) {
+  @Override public V removeEntryAt(int index) {
     sortIfNeeded();
 
     K key = keyAt(index);

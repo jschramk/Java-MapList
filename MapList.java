@@ -37,7 +37,7 @@ public interface MapList<K, V extends Comparable<V>> extends Map<K, V> {
   * @param index the index of the entry to remove
   * @return the value that was at the specified index before removal
   */
- V removeItemAt(int index);
+ V removeEntryAt(int index);
 
  /**
   * Prepares the MapList to generate a MoveReport for the next entry modification
