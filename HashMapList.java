@@ -15,6 +15,15 @@ public class HashMapList<K, V extends Comparable<V>> implements MapList<K, V> {
 
   private Comparator<K> keyComparator = Comparator.comparing(k -> values.get(k));
 
+  /*
+  private Comparator<K> keyComparator = new Comparator<K>() {
+    @Override
+    public int compare(K k, K t1) {
+      return values.get(k).compareTo(values.get(t1));
+    }
+  };
+   */
+
   private boolean prepped = false, sorted = true;
   private int prevIndex;
   private K moveKey;
@@ -28,6 +37,7 @@ public class HashMapList<K, V extends Comparable<V>> implements MapList<K, V> {
 
   private void sortIfNeeded(){
     if(!sorted){
+      //Collections.sort(keys, keyComparator);
       keys.sort(keyComparator);
       sorted = true;
     }

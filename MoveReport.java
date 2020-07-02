@@ -96,7 +96,7 @@ public class MoveReport<K, V extends Comparable<V>> {
       }
 
       case MOVE: {
-        return String.format("Moved key \"%s\" from %d to index %d", key, prevIndex, newIndex);
+        return String.format("Moved key \"%s\" from index %d to index %d", key, prevIndex, newIndex);
       }
 
       case REMOVE: {
