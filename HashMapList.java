@@ -55,6 +55,10 @@ public class HashMapList<K, V extends Comparable<V>> implements MapList<K, V> {
     return keys.get(index);
   }
 
+  @Override public V valueAt(int index) {
+    return get(keyAt(index));
+  }
+
   @Override public void prepReport() {
     if(prepped){
       throw new IllegalStateException("Already prepped");

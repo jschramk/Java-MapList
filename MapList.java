@@ -26,6 +26,13 @@ public interface MapList<K, V extends Comparable<V>> extends Map<K, V> {
  K keyAt(int index);
 
  /**
+  * Gets the value at a given index
+  * @param index the index of the desired value
+  * @return the value at the specified index
+  */
+ V valueAt(int index);
+
+ /**
   * Removes the item at a given index
   * @param index the index of the entry to remove
   * @return the value that was at the specified index before removal
