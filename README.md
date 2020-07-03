@@ -1,5 +1,7 @@
 # Java-MapList
-An augmented version of the Java Map data structure with the following features: 
+
+## What's a MapList?
+The MapList is an augmented version of the Java Map data structure with the following features: 
 * Values accessible by both keys and indices
 * Key list sorted by associated values
 * Entry movement reports detailing previous and current indices of modified entries
