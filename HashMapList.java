@@ -8,7 +8,7 @@ import java.util.*;
  * @param <K> the key class type
  * @param <V> the value class type
  */
-public class HashMapList<K, V extends Comparable<V>> implements MapList<K, V> {
+public class HashMapList<K, V> implements MapList<K, V> {
   
   private List<K> keys = new ArrayList<>();
   private Map<K, V> values = new HashMap<>();
@@ -17,7 +17,17 @@ public class HashMapList<K, V extends Comparable<V>> implements MapList<K, V> {
   private Comparator<V> valueComparator = new Comparator<V>() {
     @Override public int compare(V v, V t1) {
 
-      return v.compareTo(t1);
+      try {
+
+        return ((Comparable<V>) v).compareTo(t1);
+
+      } catch (ClassCastException e){
+
+        throw new IllegalStateException(
+            "Could not use default Comparator to sort values. Please call setComparator() first"
+        );
+
+      }
 
     }
   };
@@ -32,7 +42,6 @@ public class HashMapList<K, V extends Comparable<V>> implements MapList<K, V> {
     }
   };
 
-
   private boolean prepped = false, sorted = true;
   private int prevIndex;
   private K moveKey;
@@ -46,8 +55,8 @@ public class HashMapList<K, V extends Comparable<V>> implements MapList<K, V> {
 
   private void sortIfNeeded(){
     if(!sorted){
-      //Collections.sort(keys, keyComparator);
-      keys.sort(keyComparator);
+      Collections.sort(keys, keyComparator);
+      //keys.sort(keyComparator);
       sorted = true;
     }
   }

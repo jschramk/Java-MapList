@@ -10,7 +10,7 @@ import java.util.Map;
  * @param <K> the key class type
  * @param <V> the value class type
  */
-public interface MapList<K, V extends Comparable<V>> extends Map<K, V> {
+public interface MapList<K, V> extends Map<K, V> {
 
  /**
   * Returns the index of a given key

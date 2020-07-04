@@ -5,7 +5,7 @@
  * @param <K> the key class type
  * @param <V> the value class type
  */
-public class MoveReport<K, V extends Comparable<V>> {
+public class MoveReport<K, V> {
 
   // enum for type of modification outcome
   public enum Type {
